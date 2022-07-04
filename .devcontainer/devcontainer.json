@@ -1,0 +1,10 @@
+{
+	"name": "WordPress",
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "wordpress",
+	"workspaceFolder": "/var/www/html/wp-content/themes/ftek-theme",
+	"forwardPorts": [8888],
+	"extensions": ["esbenp.prettier-vscode", "wongjn.php-sniffer"],
+	"remoteUser": "wordpress",
+	"onCreateCommand": "sudo -Eu www-data setup-wordpress"
+}

@@ -1,0 +1,14 @@
+# Node dependencies
+node_modules/
+
+# Php dependencies
+vendor/
+
+# Build files
+build/
+languages/*.json
+languages/*.mo
+languages/*.pot
+
+# Release
+release.zip

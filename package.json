@@ -1,0 +1,40 @@
+{
+	"private": true,
+	"scripts": {
+		"start": "concurrently --kill-others npm:start:scripts npm:start:style",
+		"start:scripts": "wp-scripts start src/*.*",
+		"start:style": "sass --watch style.scss style.css",
+		"build": "npm run build:clean && concurrently npm:build:scripts npm:build:style && npm run i18n:pot && npm run i18n:po && concurrently npm:build:jed npm:build:mo",
+		"build:clean": "rm -Rf build languages/*.{json,mo,pot} && rm -Rf style.css",
+		"build:jed": "composer exec -- wp i18n make-json languages --no-purge",
+		"build:mo": "composer exec -- wp i18n make-mo languages",
+		"build:scripts": "wp-scripts build src/*.*",
+		"build:style": "sass --style=compressed style.scss style.css",
+		"i18n": "npm run build:scripts && npm run i18n:pot && npm run i18n:po",
+		"i18n:pot": "composer exec -- wp i18n make-pot .",
+		"i18n:po": "( cd languages && find . -name '*.po' -print -exec msgmerge -U --backup=none {} *.pot \\; )",
+		"lint": "concurrently npm:lint:style npm:lint:js npm:lint:php",
+		"lint:style": "wp-scripts lint-style --allow-empty-input",
+		"lint:js": "wp-scripts lint-js",
+		"lint:php": "composer exec -- phpcs --ignore=vendor,node_modules,build --extensions=php --standard=Wordpress .",
+		"format": "concurrently npm:format:scripts npm:format:php",
+		"format:scripts": "wp-scripts format",
+		"format:php": "composer exec -- phpcbf --ignore=vendor,node_modules,build --extensions=php --standard=Wordpress ."
+	},
+	"devDependencies": {
+		"@types/prettier": "^2.6.3",
+		"@types/webpack": "^5.28.0",
+		"@wordpress/icons": "^9.3.0",
+		"@wordpress/scripts": "^23.3.0",
+		"concurrently": "^7.2.2",
+		"sass": "^1.53.0",
+		"typescript": "^4.7.4",
+		"typescript-plugin-css-modules": "^3.4.0"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^6.9.0",
+		"@wordpress/components": "^19.14.0",
+		"@wordpress/element": "^4.10.0",
+		"@wordpress/i18n": "^4.12.0"
+	}
+}
