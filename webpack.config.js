@@ -28,9 +28,7 @@ const getAllEntryPoints = () => {
 	};
 };
 
-/* eslint-disable */
 /** @type {import('webpack').Configuration} */
-/* eslint-enable */
 module.exports = {
 	...defaultConfig,
 	entry: getAllEntryPoints(),

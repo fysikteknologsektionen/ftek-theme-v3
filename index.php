@@ -28,27 +28,31 @@ if ( have_posts() ) {
 } else {
 	?>
 	<section>
-		<header>
-			<?php if ( is_search() ) : ?>
+		<div class="flex flex-col items-center">
+			<div class="w-[60rem] grow-0 max-w-full mb-4 mt-4">
+				<?php get_search_form(); ?>
+			</div>
+			<header>
 				<h1>
-					<?php
-					printf(
-						/* translators: %s: search term. */
-						esc_html__( 'Results for "%s"', 'ftek-theme' ),
-						'<span>' . esc_html( get_search_query() ) . '</span>'
-					);
-					?>
+					<?php if ( is_search() ) : ?>
+						<?php
+						printf(
+							/* translators: %s: search term. */
+							esc_html__( 'Results for "%s"', 'ftek-theme' ),
+							'<span>' . esc_html( get_search_query() ) . '</span>'
+						);
+						?>
+					<?php else : ?>
+						<?php esc_html_e( 'Nothing here', 'ftek-theme' ); ?>
+					<?php endif; ?>
 				</h1>
+			</header>
+			<?php if ( is_search() ) : ?>
+				<span><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ftek-theme' ); ?></span>
 			<?php else : ?>
-				<h1><?php esc_html_e( 'Nothing here', 'ftek-theme' ); ?></h1>
+				<span><?php esc_html_e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'ftek-theme' ); ?></span>
 			<?php endif; ?>
-		</header>
-		<?php if ( is_search() ) : ?>
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ftek-theme' ); ?></p>
-		<?php else : ?>
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ftek-theme' ); ?></p>
-		<?php endif; ?>
-		<?php get_search_form(); ?>
+		<div>
 	</section>
 	<?php
 }

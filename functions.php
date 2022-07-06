@@ -10,10 +10,6 @@ namespace Ftek\Theme;
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-define( __NAMESPACE__ . '\THEME_FILE', __FILE__ );
-define( __NAMESPACE__ . '\THEME_ROOT', dirname( THEME_FILE ) );
-
-
 /**
  * Enqueue an entrypoint script
  *
@@ -28,9 +24,9 @@ function enqueue_entrypoint_script( string $handle, string $src ): void {
 	}
 
 	$base_path = '/build/' . $src;
-	$asset     = require THEME_ROOT . $base_path . '.asset.php';
+	$asset     = require get_template_directory() . $base_path . '.asset.php';
 
-	if ( file_exists( THEME_ROOT . $base_path . '.css' ) ) {
+	if ( file_exists( get_template_directory() . $base_path . '.css' ) ) {
 		wp_enqueue_style(
 			$handle,
 			get_template_directory_uri() . $base_path . '.css',
@@ -52,33 +48,84 @@ function enqueue_entrypoint_script( string $handle, string $src ): void {
 	wp_set_script_translations(
 		$handle,
 		'ftek-theme',
-		THEME_ROOT . '/languages'
+		get_template_directory() . '/languages'
 	);
 }
 
 /**
- * Activation hook callback
+ * Retrieves all menu items of a navigation menu by menu location
+ *
+ * @param string $location Menu location.
+ * @param array  $args     Arguments to pass to get_posts().
  */
-function activate() {
-	Options::activate();
+function get_nav_menu_items_by_location( string $location, array $args = array() ) {
+	$locations = get_nav_menu_locations();
+	if ( ! $locations || ! isset( $locations[ $location ] ) ) {
+		return false;
+	}
+	return wp_get_nav_menu_items( $locations[ $location ], $args );
 }
 
 /**
- * Uninstall hook callback
+ * Retrieve a quote about Lee Falk's Phantom
  */
-function uninstall(): void {
-	Options::purge();
+function get_phantom_quote(): string {
+	$quotes = array(
+		__( 'It is terror for the evil man to awake in darkness and see The Phantom.', 'ftek-theme' ),
+		__( "He who looks upon the Phantom's face will die a horrible death.", 'ftek-theme' ),
+		__( 'There are times when the Phantom leaves the jungle and walks the streets of the town like an ordinary man.', 'ftek-theme' ),
+		__( 'You never find the Phantom – he finds you.', 'ftek-theme' ),
+		__( 'When the Phantom asks, you answer.', 'ftek-theme' ),
+		__( 'When the Phantom moves, lightning stands still.', 'ftek-theme' ),
+		__( 'The voice of the Phantom turns the blood to ice.', 'ftek-theme' ),
+		__( 'The Phantom has the strength of ten tigers.', 'ftek-theme' ),
+		__( 'The Phantom has a thousand eyes and a thousand ears.', 'ftek-theme' ),
+		__( 'The Phantom moves as silently as the jungle cat.', 'ftek-theme' ),
+		__( 'The Phantom is rough with roughnecks.', 'ftek-theme' ),
+		__( 'Never point a gun at the Phantom.', 'ftek-theme' ),
+		__( 'Learn to love the darkness.', 'ftek-theme' ),
+	);
+
+	return $quotes[ array_rand( $quotes ) ];
 }
 
 
 add_action(
 	'after_setup_theme',
 	function(): void {
-		load_theme_textdomain( 'ftek-theme', false, get_template_directory() . '/languages' );
+		load_theme_textdomain( 'ftek-theme', get_template_directory() . '/languages' );
+
+		register_nav_menus(
+			array(
+				'main-navbar' => __( 'Main navbar', 'ftek-theme' ),
+			)
+		);
 	}
 );
 
-register_activation_hook( THEME_FILE, __NAMESPACE__ . '\activate' );
-register_uninstall_hook( THEME_FILE, __NAMESPACE__ . '\uninstall' );
+do_action(
+	'switch_theme',
+	function(): void {
+		Options::purge();
+	}
+);
+
+add_action(
+	'wp_enqueue_scripts',
+	function(): void {
+		enqueue_entrypoint_script( 'ftek-theme-slideshow', 'slideshow.ts' );
+
+		wp_enqueue_style(
+			'ftek-theme-style',
+			get_stylesheet_uri(),
+			array(),
+			filemtime( get_template_directory() . '/style.css' )
+		);
+	}
+);
+
+add_theme_support( 'custom-logo' );
+
+add_image_size( 'ftek-theme-placeholder-size', 32, 32 );
 
 Options::init();

@@ -81,7 +81,7 @@ Run the command
 npm run i18n
 ```
 
-to scan the source code for translatable strings (which are stored in a POT file inside the `languages` folder) and update existing translations (PO files also stored inside `languages`) from the POT file. To edit an existing localization, edit the corresponding PO file. To create a new localization, copy the POT file to a new PO file inside `languages`. Assuming the POT file is named `my-text-domain.pot`, name the PO file `my-text-domain-{locale}.po`, for example `my-text-domain-en_US.po`. Lists of locale codes available in WordPress can be found [online](https://wpastra.com/docs/complete-list-wordpress-locale-codes/).
+to scan the source code for translatable strings (which are stored in a POT file inside the `languages` folder) and update existing translations (PO files also stored inside `languages`) from the POT file. To edit an existing localization, edit the corresponding PO file. To create a new localization, copy the POT file to a new PO file inside `languages`. Name the PO file `{locale}.po`, for example `en_US.po`. Lists of locale codes available in WordPress can be found [online](https://wpastra.com/docs/complete-list-wordpress-locale-codes/).
 
 ### CSS modules
 

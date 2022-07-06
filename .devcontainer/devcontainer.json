@@ -4,7 +4,11 @@
 	"service": "wordpress",
 	"workspaceFolder": "/var/www/html/wp-content/themes/ftek-theme",
 	"forwardPorts": [8888],
-	"extensions": ["esbenp.prettier-vscode", "wongjn.php-sniffer"],
+	"extensions": [
+		"esbenp.prettier-vscode",
+		"wongjn.php-sniffer",
+		"csstools.postcss"
+	],
 	"remoteUser": "wordpress",
 	"onCreateCommand": "sudo -Eu www-data setup-wordpress"
 }
