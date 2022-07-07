@@ -17,6 +17,10 @@
 @tailwind utilities;
 
 @layer base {
+	* {
+		@apply break-words;
+	}
+
 	h1 {
 		@apply text-4xl;
 		@apply mb-8;
@@ -67,5 +71,37 @@
 			@apply brightness-150;
 			@apply underline;
 		}
+	}
+}
+
+@layer components {
+	.btn {
+		@apply p-2;
+		@apply border;
+		@apply hover:brightness-100;
+		@apply border-gray-200;
+		@apply rounded-md;
+		@apply no-underline;
+		@apply hover:no-underline;
+		@apply text-black;
+
+		&[active],
+		&:hover {
+			@apply bg-gray-200;
+		}
+	}
+}
+
+@layer utilities {
+	.text-shadow-md {
+		text-shadow: #000 0 0 4px;
+	}
+
+	.text-shadow-lg {
+		text-shadow: #000 0 0 10px;
+	}
+
+	.text-shadow-2xl {
+		text-shadow: #000 0 0 25px;
 	}
 }

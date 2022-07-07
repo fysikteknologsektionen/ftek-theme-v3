@@ -60,6 +60,24 @@ class Options {
 	 * @param \WP_Customize_Manager $manager WP_Customize_Manager instance.
 	 */
 	public static function add_customize_menus( \WP_Customize_Manager $manager ): void {
+		$manager->add_setting(
+			'ftek_theme_option[slideshow_images]',
+			array(
+				'capability' => 'edit_theme_options',
+				'type'       => 'option',
+			)
+		);
+		$manager->add_control(
+			new Slideshow_Image_Selector(
+				$manager,
+				'ftek_theme_slideshow_images_control',
+				array(
+					'section'  => 'ftek_theme_misc_section',
+					'settings' => 'ftek_theme_option[slideshow_images]',
+				)
+			)
+		);
+
 		$manager->add_section(
 			'ftek_theme_misc_section',
 			array(
@@ -225,24 +243,6 @@ class Options {
 				'label'    => __( 'Url to support contact page', 'ftek-theme' ),
 				'section'  => 'ftek_theme_misc_section',
 				'settings' => 'ftek_theme_option[support_url]',
-			)
-		);
-
-		$manager->add_setting(
-			'ftek_theme_option[slideshow_images]',
-			array(
-				'capability' => 'edit_theme_options',
-				'type'       => 'option',
-			)
-		);
-		$manager->add_control(
-			new Slideshow_Image_Selector(
-				$manager,
-				'ftek_theme_slideshow_images_control',
-				array(
-					'section'  => 'ftek_theme_misc_section',
-					'settings' => 'ftek_theme_option[slideshow_images]',
-				)
 			)
 		);
 	}

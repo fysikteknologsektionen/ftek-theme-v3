@@ -113,7 +113,9 @@ do_action(
 add_action(
 	'wp_enqueue_scripts',
 	function(): void {
-		enqueue_entrypoint_script( 'ftek-theme-slideshow', 'slideshow.ts' );
+		if ( is_front_page() ) {
+			enqueue_entrypoint_script( 'ftek-theme-slideshow', 'slideshow.ts' );
+		}
 
 		wp_enqueue_style(
 			'ftek-theme-style',

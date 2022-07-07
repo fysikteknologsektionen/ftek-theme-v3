@@ -14,17 +14,6 @@ $navbar_items = get_nav_menu_items_by_location( 'main-navbar' );
 			</main>
 		</section>
 		<footer>
-			<?php if ( $navbar_items ) : ?>
-				<nav class="flex justify-center mb-2">
-					<ul class="inline-flex flex-wrap justify-center">
-						<?php foreach ( $navbar_items as $item ) : ?>
-							<li class="p-2">
-								<a class="text-black no-underline" href="<?php echo esc_attr( $item->url ); ?>"><?php echo esc_attr( $item->title ); ?></a>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-				</nav>
-			<?php endif; ?>
 			<div class="flex flex-wrap bg-dark-gray text-gray-500 p-4" role="contentinfo">
 				<div class="grow w-full md:w-1/2 lg:w-1/3 p-2 flex flex-col items-center">
 					<h2 class="text-center mt-0">
