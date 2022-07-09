@@ -5,7 +5,7 @@
 		"start:scripts": "wp-scripts start src/*.*",
 		"start:style": "postcss --watch style.scss -o style.css",
 		"build": "npm run build:clean && concurrently npm:build:scripts npm:build:style && npm run i18n:pot && npm run i18n:po && concurrently npm:build:jed npm:build:mo",
-		"build:clean": "rm -Rf build languages/*.{json,mo,pot} && rm -Rf style.css",
+		"build:clean": "rm -Rf build languages/*.{json,mo,pot} && rm -Rf style.css*",
 		"build:jed": "composer exec -- wp i18n make-json languages --no-purge",
 		"build:mo": "composer exec -- wp i18n make-mo languages",
 		"build:scripts": "wp-scripts build src/*.*",

@@ -16,62 +16,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-	* {
-		@apply break-words;
+* {
+	@apply break-words;
+}
+
+h1 {
+	@apply text-4xl;
+	@apply mb-8;
+	@apply mt-10;
+}
+
+h2 {
+	@apply text-3xl;
+	@apply mb-4;
+	@apply mt-6;
+}
+
+h3 {
+	@apply text-2xl;
+	@apply mb-2;
+	@apply mt-4;
+}
+
+h4 {
+	@apply text-xl;
+	@apply mb-1;
+	@apply mt-2;
+}
+
+h5 {
+	@apply text-lg;
+	@apply mb-1;
+	@apply mt-2;
+}
+
+p {
+	@apply mb-2;
+	@apply mt-2;
+}
+
+a {
+	@apply underline;
+	@apply text-red-600;
+
+	&[target="_blank"]::after {
+		content: "🡭";
+		@apply inline-block;
+		@apply ml-0.5;
 	}
 
-	h1 {
-		@apply text-4xl;
-		@apply mb-8;
-		@apply mt-10;
-	}
-
-	h2 {
-		@apply text-3xl;
-		@apply mb-4;
-		@apply mt-6;
-	}
-
-	h3 {
-		@apply text-2xl;
-		@apply mb-2;
-		@apply mt-4;
-	}
-
-	h4 {
-		@apply text-xl;
-		@apply mb-1;
-		@apply mt-2;
-	}
-
-	h5 {
-		@apply text-lg;
-		@apply mb-1;
-		@apply mt-2;
-	}
-
-	p {
-		@apply mb-2;
-		@apply mt-2;
-	}
-
-	a {
+	&:hover {
+		@apply transition;
+		@apply brightness-150;
 		@apply underline;
-		@apply text-red-600;
-
-		&[target="_blank"]::after {
-			content: "🡭";
-			@apply inline-block;
-			@apply ml-0.5;
-		}
-
-		&:hover {
-			@apply transition;
-			@apply brightness-150;
-			@apply underline;
-		}
 	}
+}
+
+.wp-block {
+	@apply container;
 }
 
 @layer components {

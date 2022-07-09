@@ -130,4 +130,7 @@ add_theme_support( 'custom-logo' );
 
 add_image_size( 'ftek-theme-placeholder-size', 32, 32 );
 
+add_theme_support( 'editor-styles' );
+add_editor_style( 'style.css' );
+
 Options::init();
