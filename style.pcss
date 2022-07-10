@@ -96,7 +96,7 @@ input {
 	}
 }
 
-button {
+*:not(.ftek-plugin-dropdown-area) > button {
 	@apply btn;
 }
 
@@ -157,13 +157,8 @@ select {
 		@apply rounded-md;
 		@apply transition-opacity;
 
-		a {
-			@apply text-black;
-			@apply no-underline;
-
-			&:hover {
-				@apply underline;
-			}
+		button:hover {
+			@apply underline;
 		}
 	}
 }
@@ -177,38 +172,37 @@ select {
 
 @layer base {
 	@font-face {
-		font-family: "Roboto";
-		src: url("assets/fonts/roboto/normal.ttf") format("truetype");
-		font-weight: normal;
+		font-family: Roboto;
+		src: url(assets/fonts/roboto/normal.ttf) format("truetype");
+		font-weight: 400;
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: "Roboto";
-		src: url("assets/fonts/roboto/bold.ttf") format("truetype");
-		font-weight: bold;
+		font-family: Roboto;
+		src: url(assets/fonts/roboto/bold.ttf) format("truetype");
+		font-weight: 700;
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: "Roboto";
-		src: url("assets/fonts/roboto/italic.ttf") format("truetype");
-		font-weight: normal;
+		font-family: Roboto;
+		src: url(assets/fonts/roboto/italic.ttf) format("truetype");
+		font-weight: 400;
 		font-style: italic;
 	}
 
 	@font-face {
-		font-family: "Roboto";
-		src: url("assets/fonts/roboto/bold-italic.ttf") format("truetype");
-		font-weight: bold;
+		font-family: Roboto;
+		src: url(assets/fonts/roboto/bold-italic.ttf) format("truetype");
+		font-weight: 700;
 		font-style: italic;
 	}
 
 	@font-face {
 		font-family: "Latin Modern Roman";
-		src: url("assets/fonts/latin-modern-roman/normal.ttf")
-			format("truetype");
-		font-weight: bold;
+		src: url(assets/fonts/latin-modern-roman/normal.ttf) format("truetype");
+		font-weight: 400;
 		font-style: italic;
 	}
 }
@@ -227,7 +221,7 @@ select {
 		&:hover {
 			@apply bg-gray-200;
 			@apply brightness-100;
-			@apply: no-underline;
+			@apply no-underline;
 		}
 
 		&:active {
