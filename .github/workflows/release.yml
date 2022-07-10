@@ -39,7 +39,7 @@ jobs:
           composer i --no-dev
 
       - name: Collect release files
-        run: zip -r release.zip . -x ".git/*" -x ".devcontainer/*" -x ".github/*" -x ".vscode/*" -x "style.css*"
+        run: zip -r release.zip . -x ".git/*" -x ".devcontainer/*" -x ".github/*" -x ".vscode/*"
 
       - name: Create release
         uses: softprops/action-gh-release@v1

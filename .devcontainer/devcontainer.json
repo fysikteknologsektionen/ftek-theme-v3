@@ -7,7 +7,8 @@
 	"extensions": [
 		"esbenp.prettier-vscode",
 		"wongjn.php-sniffer",
-		"csstools.postcss"
+		"csstools.postcss",
+		"bradlc.vscode-tailwindcss"
 	],
 	"remoteUser": "wordpress",
 	"onCreateCommand": "sudo -Eu www-data setup-wordpress"

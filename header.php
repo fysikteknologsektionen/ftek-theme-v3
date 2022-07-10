@@ -21,7 +21,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 	</head>
 	<body class="bg-white min-h-screen flex flex-col" <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
-		<header class="sticky top-0 relative z-10">
+		<header class="relative z-10">
 			<div class="relative bg-white shadow z-20">
 				<div class="container mx-auto p-2 flex items-center flex-wrap">
 					<?php if ( has_custom_logo() ) : ?>
@@ -58,8 +58,8 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 				</div>
 			</div>
 			<?php if ( $navbar_items ) : ?>
-				<nav id="ftek-theme-dropdown" class="bg-white lg:hidden relative shadow-md [&[closed]]:-translate-y-[calc(100%+10px)] -mb-[calc(100%+10px)] transition-transform" closed>
-					<ul>
+				<nav id="ftek-theme-dropdown" class="bg-white lg:hidden w-full absolute shadow-md [&[closed]]:-translate-y-[calc(100%+10px)] transition-transform" closed>
+					<ul class="container mx-auto">
 						<?php foreach ( $navbar_items as $item ) : ?>
 							<li class="p-2">
 								<a class="no-underline text-black" href="<?php echo esc_attr( $item->url ); ?>"><?php echo esc_attr( $item->title ); ?></a>
@@ -100,25 +100,12 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 				</div>
 				<div id="ftek-theme-slideshow-frame" class="-z-10 top-0 absolute h-full w-full flex transition-[left] duration-500">
 					<?php foreach ( $slideshow_images as $img ) : ?>
-						<div class="shrink-0 relative h-full w-full inline-block">
-							<?php
-							$full_path            = wp_get_original_image_path( $img['id'] );
-							$basename             = basename( $full_path );
-							$placeholder_basename = basename( wp_get_attachment_image_url( $img['id'], 'ftek-theme-placeholder-size' ) );
-							$placeholder_path     = str_replace( $basename, $placeholder_basename, $full_path );
-							// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-							$data      = file_get_contents( $placeholder_path );
-							$finfo     = new \finfo( FILEINFO_MIME_TYPE );
-							$mime_type = $finfo->buffer( $data );
-							?>
-							<div class="overflow-hidden z-10 w-full h-full bg-gray-400">
-								<img class="object-cover w-full h-full blur-lg" src="data:<?php echo esc_attr( $mime_type ); ?>;charset=utf-8;base64,<?php echo esc_attr( base64_encode( $data ) ); ?>" /> <?php // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode ?>
-							</div>
-							<img class="object-cover w-full h-full absolute top-0 left-0 opacity-0 transition-opacity" src="<?php echo esc_attr( $img['url'] ); ?>" onload="this.style.opacity = 1" />
+						<div class="shrink-0 h-full w-full inline-block">
+							<?php get_template_part( 'template-parts/image', null, array( 'id' => $img['id'] ) ); ?>
 						</div>
 					<?php endforeach; ?>
 				</div>
 			</div>
 		<?php endif; ?>
-		<section class="flex-grow container mx-auto p-2 pb-10">
+		<section class="flex-grow pt-2 pb-2">
 			<main id="main" role="main">

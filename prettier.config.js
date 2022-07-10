@@ -11,7 +11,7 @@ module.exports = {
 			},
 		},
 		{
-			files: '*.scss',
+			files: '*.{scss,pcss}',
 			options: {
 				singleQuote: false,
 			},

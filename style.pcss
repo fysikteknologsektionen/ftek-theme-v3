@@ -72,24 +72,111 @@ a {
 	}
 }
 
+table {
+	@apply overflow-x-auto;
+	@apply block;
+
+	th {
+		@apply text-left;
+	}
+}
+
+input {
+	&[type="text"],
+	&[type="password"] {
+		@apply border-b-2;
+		@apply border-gray-200;
+		@apply outline-none;
+	}
+}
+
+button {
+	@apply btn;
+}
+
+select {
+	@apply bg-transparent;
+	@apply p-2;
+	@apply border;
+	@apply border-gray-200;
+	@apply rounded-md;
+	@apply text-black;
+	@apply transition-colors;
+
+	&[active],
+	&:hover {
+		@apply bg-gray-200;
+	}
+
+	&:active {
+		@apply bg-gray-300;
+	}
+
+	&:disabled {
+		@apply border-0;
+		@apply bg-gray-100;
+		@apply text-gray-500;
+	}
+}
+
 .wp-block {
 	@apply container;
 }
 
+.ftek-plugin-sectioned-page {
+	@apply lg:flex;
+	@apply lg:items-start;
+
+	&-main {
+		@apply lg:shrink;
+		@apply lg:grow;
+		@apply lg:pr-4;
+	}
+
+	&-aside {
+		@apply mt-4;
+		@apply lg:mt-0;
+		@apply lg:min-w-[25%];
+		@apply lg:pl-4;
+		@apply lg:border-gray-200;
+		@apply lg:border-l;
+		@apply lg:sticky;
+		@apply lg:top-0;
+	}
+}
+
+.alignwide,
+.alignfull {
+	@apply max-w-full !important;
+	@apply pl-0 !important;
+	@apply pr-0 !important;
+}
+
 @layer components {
-	.btn {
+	.btn:not(.no-btn) {
 		@apply p-2;
 		@apply border;
-		@apply hover:brightness-100;
 		@apply border-gray-200;
 		@apply rounded-md;
 		@apply no-underline;
-		@apply hover:no-underline;
 		@apply text-black;
+		@apply transition-colors;
 
 		&[active],
 		&:hover {
 			@apply bg-gray-200;
+			@apply brightness-100;
+			@apply: no-underline;
+		}
+
+		&:active {
+			@apply bg-gray-300;
+		}
+
+		&:disabled {
+			@apply border-0;
+			@apply bg-gray-100;
+			@apply text-gray-500;
 		}
 	}
 }

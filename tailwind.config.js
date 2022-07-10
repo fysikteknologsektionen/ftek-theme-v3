@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
-	content: ['./src/**/*.{ts,tsx}', './*.php', './includes/*.php'],
+	content: ['./src/**/*.{ts,tsx}', './*.php', './template-parts/*.php'],
 	theme: {
 		extend: {
 			colors: {

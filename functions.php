@@ -100,6 +100,16 @@ add_action(
 				'main-navbar' => __( 'Main navbar', 'ftek-theme' ),
 			)
 		);
+
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'custom-logo' );
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'align-wide' );
+
+		add_image_size( 'ftek-theme-placeholder-size', 32, 32 );
+
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'style.css' );
 	}
 );
 
@@ -125,12 +135,5 @@ add_action(
 		);
 	}
 );
-
-add_theme_support( 'custom-logo' );
-
-add_image_size( 'ftek-theme-placeholder-size', 32, 32 );
-
-add_theme_support( 'editor-styles' );
-add_editor_style( 'style.css' );
 
 Options::init();
