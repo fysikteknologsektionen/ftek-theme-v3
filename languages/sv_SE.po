@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ftek Theme v3 3.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ftek-theme\n"
-"POT-Creation-Date: 2022-07-06T19:27:14+00:00\n"
+"POT-Creation-Date: 2022-07-10T10:58:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ossian Eriksson\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,59 +35,59 @@ msgstr ""
 msgid "https://github.com/OssianEriksson"
 msgstr ""
 
-#: footer.php:43
+#: footer.php:32
 msgid "The Physics Division"
 msgstr "Fysikteknologsektionen"
 
 #. translators: %1$s Organization number.
-#: footer.php:48
+#: footer.php:37
 msgid "Organization number: %1$s"
 msgstr "Organisationsnummer: %1$s"
 
 #. translators: %1$s Publisher name.
-#: footer.php:54
+#: footer.php:43
 msgid "Publisher: %1$s"
 msgstr "Ansvarig utgivare: %1$s"
 
 #. translators: %1$s Email anchor.
-#: footer.php:60
+#: footer.php:49
 msgid "Email: %1$s"
 msgstr "Emejl: %1$s"
 
 #. translators: %1$s Street address.
-#: footer.php:66
+#: footer.php:55
 msgid "Street address: %1$s"
 msgstr "Besöksaddress: %1$s"
 
 #. translators: %1$s Mailing address.
-#: footer.php:72
+#: footer.php:61
 msgid "Mailing address: %1$s"
 msgstr "Postaddress: %1$s"
 
-#: footer.php:78
+#: footer.php:67
 msgid "Looking for someone?"
 msgstr "Letar du efter någon?"
 
 #. translators: %1$s Name of a person or group.
-#: footer.php:92
+#: footer.php:81
 msgid "Development and design: %1$s"
 msgstr "Utveckling och design: %1$s"
 
 #. translators: %1$s Name of a person or group.
-#: footer.php:94
+#: footer.php:83
 msgid "Original design: %1$s"
 msgstr "Ursprunlig design: %1$s"
 
 #. translators: %1$s Name of a person or group.
-#: footer.php:97
+#: footer.php:86
 msgid "Development and support: %1$s"
 msgstr "Utveckling och support: %1$s"
 
-#: footer.php:104
+#: footer.php:93
 msgid "Contact"
 msgstr "Kontakt"
 
-#: footer.php:110
+#: footer.php:99
 msgid "Privacy Policy"
 msgstr "Integritetspolicy"
 
@@ -151,64 +151,64 @@ msgstr "Lär dig älska mörkret."
 msgid "Main navbar"
 msgstr "Huvudnavigation"
 
-#: header.php:45
+#: header.php:51
 msgid "Sign in"
 msgstr "Logga in"
 
-#: includes/class-options.php:66
+#: includes/class-options.php:84
 msgid "Ftek Theme Settings"
 msgstr "Inställningar för Ftek Theme"
 
-#: includes/class-options.php:81
+#: includes/class-options.php:99
 msgid "Full name of the publisher"
 msgstr "Ansvarig utgivares namn"
 
-#: includes/class-options.php:97
+#: includes/class-options.php:115
 msgid "Organization number"
 msgstr "Organisationsnummer"
 
-#: includes/class-options.php:113
+#: includes/class-options.php:131
 msgid "Email"
 msgstr "Emejl"
 
-#: includes/class-options.php:129
+#: includes/class-options.php:147
 msgid "Street address"
 msgstr "Besöksaddress"
 
-#: includes/class-options.php:145
+#: includes/class-options.php:163
 msgid "Mailing address"
 msgstr "Postaddress"
 
-#: includes/class-options.php:161
+#: includes/class-options.php:179
 msgid "Url to contact page"
 msgstr "Url till kontaktsida"
 
-#: includes/class-options.php:177
+#: includes/class-options.php:195
 msgid "Url to privacy policy page"
 msgstr "Url till integritetspolicy-sida"
 
-#: includes/class-options.php:193
+#: includes/class-options.php:211
 msgid "Url to page about Lee Falk's Phantom"
 msgstr "Url till sida om Lee Falk's Fantomen"
 
-#: includes/class-options.php:209
+#: includes/class-options.php:227
 msgid "Name of support contact"
 msgstr "Namn på supportkontakt"
 
-#: includes/class-options.php:225
+#: includes/class-options.php:243
 msgid "Url to support contact page"
 msgstr "Url till supportkontaktsens sida"
 
 #. translators: %s: search term.
-#: index.php:41
+#: index.php:49
 msgid "Results for \"%s\""
 msgstr "Resultat för \"%s\""
 
-#: index.php:46
+#: index.php:54
 msgid "Nothing here"
 msgstr "Ingenting här"
 
-#: index.php:51
+#: index.php:59
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -216,7 +216,7 @@ msgstr ""
 "Ledsen, men ingenting matchade dina söktermer. Försök igen med några andra "
 "nyckelord."
 
-#: index.php:53
+#: index.php:61
 msgid ""
 "It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""

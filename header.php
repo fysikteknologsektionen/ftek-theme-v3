@@ -52,7 +52,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 							</a>
 						<?php endif; ?>
 						<?php if ( $navbar_items ) : ?>
-							<button class="btn shrink-0 aspect-square w-11 ml-2 lg:hidden" onclick="document.getElementById('ftek-theme-dropdown').toggleAttribute('closed'); this.toggleAttribute('active');">☰</button>
+							<button class="shrink-0 aspect-square w-11 ml-2 lg:hidden" onclick="document.getElementById('ftek-theme-dropdown').toggleAttribute('closed'); this.toggleAttribute('active');">☰</button>
 						<?php endif; ?>
 					</nav>
 				</div>
@@ -73,29 +73,29 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 			<div class="relative overflow-hidden">
 				<div class="flex items-center">
 					<?php if ( count( $slideshow_images ) > 1 ) : ?>
-						<button id="ftek-theme-slideshow-left" class="opacity-50 enabled:hover:opacity-100 transition-opacity text-white text-shadow-2xl text-2xl enabled:cursor-pointer enabled:hover:scale-110 transition-transform p-2">❮</button>
+						<button id="ftek-theme-slideshow-left" class="no-btn opacity-50 enabled:hover:opacity-100 text-white text-shadow-2xl text-2xl enabled:cursor-pointer enabled:hover:scale-110 transition-transform p-2">❮</button>
 					<?php endif; ?>
 					<div class="grow flex flex-col items-center justify-center min-w-0">
 						<?php if ( count( $slideshow_images ) > 1 ) : ?>
 							<div class="m-1 opacity-50 hover:opacity-100 transition-opacity invisible">
 								<?php foreach ( $slideshow_images as $i => $img ) : ?>
-									<button class="p-1 text-shadow-lg text-sm <?php echo 0 === $i ? 'text-red-700' : 'text-white'; ?> cursor-pointer hover:scale-110 transition">⬤</button>
+									<button class="no-btn p-1 text-shadow-lg text-sm <?php echo 0 === $i ? 'text-red-700' : 'text-white'; ?> cursor-pointer hover:scale-110 transition">⬤</button>
 								<?php endforeach; ?>
 							</div>
 						<?php endif; ?>
 						<div class="text-center text-white text-shadow-md mt-[10vh] invisible"><?php bloginfo( 'description' ); ?></div>
-						<h1 class="max-w-full bg-red-700/50 p-4 text-white font-bold m-0 mb-2 mt-2 lg:text-6xl"><?php bloginfo( 'name' ); ?></h1>
+						<h1 class="font-sans max-w-full bg-red-700/50 p-4 text-white font-bold m-0 mb-2 mt-2 lg:text-6xl"><?php bloginfo( 'name' ); ?></h1>
 						<div class="text-center text-white text-shadow-md mb-[10vh]"><?php bloginfo( 'description' ); ?></div>
 						<?php if ( count( $slideshow_images ) > 1 ) : ?>
 							<div class="m-1 opacity-50 hover:opacity-100 transition-opacity">
 								<?php foreach ( $slideshow_images as $i => $img ) : ?>
-									<button class="ftek-theme-slideshow-indicator p-1 text-shadow-lg text-sm <?php echo 0 === $i ? 'text-red-700' : 'text-white'; ?> cursor-pointer hover:scale-110 transition">⬤</button>
+									<button class="ftek-theme-slideshow-indicator no-btn p-1 text-shadow-lg text-sm <?php echo 0 === $i ? 'text-red-700' : 'text-white'; ?> cursor-pointer hover:scale-110 transition">⬤</button>
 								<?php endforeach; ?>
 							</div>
 						<?php endif; ?>
 					</div>
 					<?php if ( count( $slideshow_images ) > 1 ) : ?>
-						<button id="ftek-theme-slideshow-right" class="opacity-50 enabled:hover:opacity-100 transition-opacity text-white text-shadow-2xl text-2xl enabled:cursor-pointer enabled:hover:scale-110 transition-transform p-2">❯</button>
+						<button id="ftek-theme-slideshow-right" class="no-btn opacity-50 enabled:hover:opacity-100 text-white text-shadow-2xl text-2xl enabled:cursor-pointer enabled:hover:scale-110 transition-transform p-2">❯</button>
 					<?php endif; ?>
 				</div>
 				<div id="ftek-theme-slideshow-frame" class="-z-10 top-0 absolute h-full w-full flex transition-[left] duration-500">

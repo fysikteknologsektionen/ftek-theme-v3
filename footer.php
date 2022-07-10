@@ -25,7 +25,7 @@ $navbar_items = get_nav_menu_items_by_location( 'main-navbar' );
 							<?php echo esc_html( get_phantom_quote() ); ?>
 						<?php endif; ?>
 					</h2>
-					<img class="w-32 max-w-1/2" src="<?php echo esc_attr( get_template_directory_uri() . '/assets/the-phantom.svg' ); ?>">
+					<img class="w-32 max-w-1/2" src="<?php echo esc_attr( get_template_directory_uri() . '/assets/images/the-phantom.svg' ); ?>">
 				</div>
 				<div class="grow w-full md:w-1/2 lg:w-1/3 p-2 flex justify-center md:order-first text-center md:text-left">
 					<div class="inline-block">
@@ -73,7 +73,7 @@ $navbar_items = get_nav_menu_items_by_location( 'main-navbar' );
 				</div>
 				<div class="grow w-full md:w-1/2 lg:w-1/3 p-2 flex justify-center text-sm">
 					<a class="w-3/4" href="https://chalmersstudentkar.se">
-						<img class="w-full" src="<?php echo esc_attr( get_template_directory_uri() . '/assets/student-union.svg' ); ?>">
+						<img class="w-full" src="<?php echo esc_attr( get_template_directory_uri() . '/assets/images/student-union.svg' ); ?>">
 					</a>
 				</div>
 				<div class="grow w-full md:w-1/2 lg:w-1/3 p-2 flex flex-col items-center text-sm">
