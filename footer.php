@@ -29,7 +29,7 @@ $navbar_items = get_nav_menu_items_by_location( 'main-navbar' );
 				</div>
 				<div class="grow w-full md:w-1/2 lg:w-1/3 p-2 flex justify-center md:order-first text-center md:text-left">
 					<div class="inline-block">
-						<h3><a class="text-gray-400 no-underline mt-0" href="<?php echo esc_attr( home_url() ); ?>"><?php esc_html_e( 'The Physics Division', 'ftek-theme' ); ?></a></h3>
+						<h3><a class="text-gray-400 no-underline mt-0" href="<?php echo esc_attr( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h3>
 						<ul class="text-sm">
 							<?php if ( Options::get( 'org_nr' ) ) : ?>
 								<li>
