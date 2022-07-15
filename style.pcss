@@ -125,30 +125,37 @@ select {
 	}
 }
 
+.wp-block-post-title,
+.is-root-container > * {
+	@apply container !important;
+	@apply mx-auto;
+}
+
 .wp-block {
-	@apply container;
+	@apply max-w-none;
 }
 
 .ftek-plugin {
 	&-sectioned-page {
-		@apply lg:flex;
-		@apply lg:items-start;
+		@apply md:flex;
+		@apply md:items-start;
 
 		&-main {
-			@apply lg:shrink;
-			@apply lg:grow;
-			@apply lg:pr-4;
+			@apply md:shrink;
+			@apply md:grow;
+			@apply md:pr-4;
 		}
 
 		&-aside {
 			@apply mt-4;
-			@apply lg:mt-0;
-			@apply lg:min-w-[25%];
-			@apply lg:pl-4;
-			@apply lg:border-gray-200;
-			@apply lg:border-l;
-			@apply lg:sticky;
-			@apply lg:top-0;
+			@apply md:mt-0;
+			@apply md:w-[25%];
+			@apply md:shrink-0;
+			@apply md:pl-4;
+			@apply md:border-gray-200;
+			@apply md:border-l;
+			@apply md:sticky;
+			@apply md:top-0;
 		}
 	}
 
