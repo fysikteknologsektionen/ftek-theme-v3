@@ -20,13 +20,15 @@ namespace Ftek\Theme;
 						<?php get_template_part( 'template-parts/image', null, array( 'id' => get_post_thumbnail_id() ) ); ?>
 					</div>
 				<?php endif; ?>
-				<div class="container mx-auto pl-2 pr-2">
-					<?php if ( is_singular() ) : ?>
-						<h1><?php the_title(); ?></h1>
-					<?php else : ?>
-						<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
-					<?php endif; ?>
-				</div>
+				<?php if ( ! empty( get_the_title() ) ) : ?>
+					<div class="container mx-auto pl-2 pr-2">
+						<?php if ( is_singular() ) : ?>
+							<h1><?php the_title(); ?></h1>
+						<?php else : ?>
+							<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 			</header>
 			<div class="[&>*]:container [&>*]:mx-auto [&>*]:pl-2 [&>*]:pr-2">
 				<?php the_content(); ?>
