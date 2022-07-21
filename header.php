@@ -31,7 +31,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 					<?php endif; ?>
 					<?php if ( $navbar_items ) : ?>
 						<nav class="hidden lg:block overflow-hidden">
-							<ul class="inline-flex justify-center">
+							<ul class="inline-flex justify-center list-none m-0">
 								<?php foreach ( $navbar_items as $item ) : ?>
 									<li class="p-2">
 										<a class="no-underline text-black" href="<?php echo esc_attr( $item->url ); ?>"><?php echo esc_attr( $item->title ); ?></a>
@@ -59,7 +59,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 			</div>
 			<?php if ( $navbar_items ) : ?>
 				<nav id="ftek-theme-dropdown" class="bg-white lg:hidden w-full absolute shadow-md [&[closed]]:-translate-y-[calc(100%+10px)] transition-transform" closed>
-					<ul class="container mx-auto">
+					<ul class="container mx-auto list-none m-0">
 						<?php foreach ( $navbar_items as $item ) : ?>
 							<li class="p-2">
 								<a class="no-underline text-black" href="<?php echo esc_attr( $item->url ); ?>"><?php echo esc_attr( $item->title ); ?></a>

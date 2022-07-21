@@ -81,6 +81,18 @@ table {
 	th {
 		@apply text-left;
 	}
+
+	th,
+	td {
+		@apply p-1;
+	}
+
+	& > tr,
+	& > tbody > tr {
+		&:nth-child(even) {
+			@apply bg-gray-200;
+		}
+	}
 }
 
 input {
@@ -125,6 +137,15 @@ select {
 	}
 }
 
+ul {
+	@apply list-disc;
+	@apply ml-4;
+
+	ul {
+		@apply list-circle;
+	}
+}
+
 .wp-block-post-title,
 .is-root-container > * {
 	@apply container !important;
@@ -166,6 +187,23 @@ select {
 
 		button:hover {
 			@apply underline;
+		}
+	}
+
+	&-collapsible-header {
+		@apply relative;
+
+		&::before {
+			content: "▸";
+			@apply inline-block;
+			@apply transition-transform;
+			@apply absolute;
+			@apply -translate-x-full;
+			@apply -left-1;
+		}
+
+		&[active]::before {
+			@apply rotate-90;
 		}
 	}
 }
@@ -254,5 +292,9 @@ select {
 
 	.text-shadow-2xl {
 		text-shadow: #000 0 0 25px;
+	}
+
+	.list-circle {
+		list-style-type: circle;
 	}
 }
