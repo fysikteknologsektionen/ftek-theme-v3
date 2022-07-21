@@ -41,7 +41,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 						</nav>
 					<?php endif; ?>
 					<nav class="flex flex-grow justify-end items-center">
-						<?php if ( ! is_search() ) : ?>
+						<?php if ( ! is_search() && have_posts() ) : ?>
 							<div class="hidden sm:block">
 								<?php get_search_form(); ?>
 							</div>
