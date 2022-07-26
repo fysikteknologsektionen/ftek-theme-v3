@@ -82,6 +82,10 @@ table {
 		@apply text-left;
 	}
 
+	& > thead > tr {
+		@apply bg-gray-200;
+	}
+
 	th,
 	td {
 		@apply p-1;
@@ -89,8 +93,13 @@ table {
 
 	& > tr,
 	& > tbody > tr {
-		&:nth-child(even) {
-			@apply bg-gray-200;
+		&:nth-child(odd),
+		&.ftek-plugin-row-odd {
+			@apply bg-gray-100;
+		}
+
+		&.ftek-plugin-row-even {
+			@apply bg-transparent;
 		}
 	}
 }
