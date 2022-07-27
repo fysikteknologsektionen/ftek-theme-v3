@@ -149,10 +149,19 @@ select {
 
 ul {
 	@apply list-disc;
-	@apply ml-4;
+	@apply pl-10 !important;
 
 	ul {
 		@apply list-circle;
+	}
+}
+
+ol {
+	@apply list-decimal;
+	@apply pl-10 !important;
+
+	ol {
+		@apply list-lower-roman;
 	}
 }
 
@@ -310,5 +319,9 @@ ul {
 
 	.list-circle {
 		list-style-type: circle;
+	}
+
+	.list-lower-roman {
+		list-style-type: lower-roman;
 	}
 }
