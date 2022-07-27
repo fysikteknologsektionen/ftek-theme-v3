@@ -82,15 +82,16 @@ table {
 		@apply text-left;
 	}
 
-	& > thead > tr {
-		@apply bg-gray-200;
-	}
-
 	th,
 	td {
 		@apply p-1;
 	}
 
+	& > thead > tr {
+		@apply bg-gray-200;
+	}
+
+	/* stylelint-disable-next-line no-descending-specificity */
 	& > tr,
 	& > tbody > tr {
 		&:nth-child(odd),
