@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ftek Theme v3 3.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ftek-theme\n"
-"POT-Creation-Date: 2022-07-27T15:46:14+00:00\n"
+"POT-Creation-Date: 2022-07-27T22:33:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ossian Eriksson\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,55 +35,65 @@ msgstr ""
 msgid "https://github.com/OssianEriksson"
 msgstr ""
 
+#. translators: %1$s: datetime.
+#: footer.php:29
+msgid "Published %1$s"
+msgstr "Publicerad %1$s"
+
+#. translators: %1$s: datetime.
+#: footer.php:29 footer.php:41
+msgid "Updated %1$s"
+msgstr "Uppdaterad %1$s"
+
 #. translators: %1$s Organization number.
-#: footer.php:37
+#: footer.php:69
 msgid "Organization number: %1$s"
 msgstr "Organisationsnummer: %1$s"
 
 #. translators: %1$s Publisher name.
-#: footer.php:43
+#: footer.php:75
 msgid "Publisher: %1$s"
 msgstr "Ansvarig utgivare: %1$s"
 
 #. translators: %1$s Email anchor.
-#: footer.php:49
+#: footer.php:81
 msgid "Email: %1$s"
 msgstr "Emejl: %1$s"
 
 #. translators: %1$s Street address.
-#: footer.php:55
+#: footer.php:87
 msgid "Street address: %1$s"
 msgstr "Besöksaddress: %1$s"
 
 #. translators: %1$s Mailing address.
-#: footer.php:61
+#: footer.php:93
 msgid "Mailing address: %1$s"
 msgstr "Postaddress: %1$s"
 
-#: footer.php:67
+#: footer.php:99
 msgid "Looking for someone?"
 msgstr "Letar du efter någon?"
 
 #. translators: %1$s Name of a person or group.
-#: footer.php:81
+#: footer.php:113
 msgid "Development and design: %1$s"
 msgstr "Utveckling och design: %1$s"
 
 #. translators: %1$s Name of a person or group.
-#: footer.php:83
+#: footer.php:115
 msgid "Original design: %1$s"
 msgstr "Ursprunlig design: %1$s"
 
 #. translators: %1$s Name of a person or group.
-#: footer.php:86
+#: footer.php:118
 msgid "Development and support: %1$s"
 msgstr "Utveckling och support: %1$s"
 
-#: footer.php:93
+#: footer.php:125
 msgid "Contact"
 msgstr "Kontakt"
 
-#: footer.php:99
+#: footer.php:131
 msgid "Privacy Policy"
 msgstr "Integritetspolicy"
 
@@ -195,12 +205,12 @@ msgstr "Namn på supportkontakt"
 msgid "Url to support contact page"
 msgstr "Url till supportkontaktsens sida"
 
-#. translators: %s: search term.
+#. translators: %1$s: search term.
 #: index.php:20
-msgid "Results for \"%s\""
-msgstr "Resultat för \"%s\""
+msgid "Results for \"%1$s\""
+msgstr "Resultat för \"%1$s\""
 
-#: index.php:68
+#: index.php:81
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -208,11 +218,11 @@ msgstr ""
 "Ledsen, men ingenting matchade dina söktermer. Försök igen med några andra "
 "nyckelord."
 
-#: index.php:71
+#: index.php:84
 msgid "Nothing here"
 msgstr "Ingenting här"
 
-#: index.php:76
+#: index.php:89
 msgid ""
 "It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""

@@ -16,8 +16,8 @@ namespace Ftek\Theme;
 			<h1>
 				<?php
 				printf(
-					/* translators: %s: search term. */
-					esc_html__( 'Results for "%s"', 'ftek-theme' ),
+					/* translators: %1$s: search term. */
+					esc_html__( 'Results for "%1$s"', 'ftek-theme' ),
 					'<span>' . esc_html( get_search_query() ) . '</span>'
 				);
 				?>
