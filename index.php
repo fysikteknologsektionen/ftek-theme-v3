@@ -36,18 +36,31 @@ namespace Ftek\Theme;
 		<?php endif; ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header>
-				<?php if ( is_singular() && has_post_thumbnail() ) : ?>
-					<div class="h-[min(50vw,40vh)]">
-						<?php get_template_part( 'template-parts/image', null, array( 'id' => get_post_thumbnail_id() ) ); ?>
-					</div>
-				<?php endif; ?>
-				<?php if ( ! empty( get_the_title() ) ) : ?>
-					<div class="container mx-auto pl-2 pr-2">
-						<?php if ( is_singular() ) : ?>
-							<h1><?php the_title(); ?></h1>
-						<?php else : ?>
-							<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
+				<?php if ( is_singular() ) : ?>
+					<?php
+					$thumbnail_id = false;
+					$current_id   = get_the_ID();
+					for ( $j = 0; $j < 10 && $current_id; $j++ ) {
+						if ( has_post_thumbnail( $current_id ) ) {
+							$thumbnail_id = get_post_thumbnail_id( $current_id );
+							break;
+						}
+						$current_id = wp_get_post_parent_id( $current_id );
+					}
+					?>
+					<div class="relative overflow-hidden mb-4">
+						<div class="flex items-center justify-center <?php echo $thumbnail_id ? 'min-h-[min(50vw,40vh)]' : ''; ?>">
+							<h1 class="lg:text-6xl <?php echo $thumbnail_id ? 'text-white text-shadow-lg' : ''; ?>"><?php the_title(); ?></h1>
+						</div>
+						<?php if ( $thumbnail_id ) : ?>
+							<div class="-z-10 top-0 absolute h-full w-full">
+								<?php get_template_part( 'template-parts/image', null, array( 'id' => $thumbnail_id ) ); ?>
+							</div>
 						<?php endif; ?>
+					</div>
+				<?php elseif ( ! empty( get_the_title() ) ) : ?>
+					<div class="container mx-auto pl-2 pr-2">
+						<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
 					</div>
 				<?php endif; ?>
 			</header>

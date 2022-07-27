@@ -71,7 +71,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 		</header>
 		<?php if ( is_front_page() && $slideshow_images ) : ?>
 			<div class="relative overflow-hidden">
-				<div class="flex items-center">
+				<div class="flex items-center min-h-[min(50vw,40vh)]">
 					<?php if ( count( $slideshow_images ) > 1 ) : ?>
 						<button id="ftek-theme-slideshow-left" class="no-btn opacity-50 enabled:hover:opacity-100 text-white text-shadow-2xl text-2xl enabled:cursor-pointer enabled:hover:scale-110 transition-transform p-2">❮</button>
 					<?php endif; ?>
