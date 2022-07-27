@@ -64,7 +64,7 @@ namespace Ftek\Theme;
 					</div>
 				<?php endif; ?>
 			</header>
-			<div class="[&>*]:container [&>*]:mx-auto [&>*]:pl-2 [&>*]:pr-2">
+			<div class="[&>*]:container [&>*]:mx-auto [&>*:not(ol,ul)]:pl-2 [&>*]:pr-2">
 				<?php if ( is_singular() ) : ?>
 					<?php the_content(); ?>
 				<?php else : ?>
