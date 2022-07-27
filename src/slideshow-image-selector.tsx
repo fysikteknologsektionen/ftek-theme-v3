@@ -1,6 +1,6 @@
 import { render, useState } from '@wordpress/element';
 import { MediaUpload } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import { Button, PanelRow } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 type Value = {
@@ -17,23 +17,37 @@ const Slideshow = ({
 }): JSX.Element => {
 	const [state, setState] = useState(originalValue);
 
+	const setValue = (value: Value) => {
+		input.value = JSON.stringify(value);
+		input.dispatchEvent(new Event('change'));
+		setState(value);
+	};
+
 	return (
-		<MediaUpload
-			onSelect={(media: { id: number; url: string }[]) => {
-				const value: Value = media.map(({ id, url }) => ({ id, url }));
-				input.value = JSON.stringify(value);
-				input.dispatchEvent(new Event('change'));
-				setState(value);
-			}}
-			allowedTypes={['image']}
-			multiple={true}
-			value={state.map((v) => v.id)}
-			render={({ open }) => (
-				<Button onClick={open} variant="primary">
-					{__('Select slideshow images', 'ftek-theme')}
+		<>
+			{' '}
+			<PanelRow>
+				<b>{__('Slideshow', 'ftek-theme')}</b>
+			</PanelRow>
+			<PanelRow>
+				<MediaUpload
+					onSelect={(media: { id: number; url: string }[]) =>
+						setValue(media.map(({ id, url }) => ({ id, url })))
+					}
+					allowedTypes={['image']}
+					multiple={true}
+					value={state.map((v) => v.id)}
+					render={({ open }) => (
+						<Button onClick={open} variant="primary">
+							{__('Select images', 'ftek-theme')}
+						</Button>
+					)}
+				/>
+				<Button onClick={() => setValue([])} variant="seconday">
+					{__('Clear images', 'ftek-theme')}
 				</Button>
-			)}
-		/>
+			</PanelRow>
+		</>
 	);
 };
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ftek Theme v3 3.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ftek-theme\n"
-"POT-Creation-Date: 2022-07-15T13:01:09+00:00\n"
+"POT-Creation-Date: 2022-07-27T15:46:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ossian Eriksson\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -196,15 +196,11 @@ msgid "Url to support contact page"
 msgstr "Url till supportkontaktsens sida"
 
 #. translators: %s: search term.
-#: index.php:49
+#: index.php:20
 msgid "Results for \"%s\""
 msgstr "Resultat för \"%s\""
 
-#: index.php:54
-msgid "Nothing here"
-msgstr "Ingenting här"
-
-#: index.php:59
+#: index.php:68
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -212,7 +208,11 @@ msgstr ""
 "Ledsen, men ingenting matchade dina söktermer. Försök igen med några andra "
 "nyckelord."
 
-#: index.php:61
+#: index.php:71
+msgid "Nothing here"
+msgstr "Ingenting här"
+
+#: index.php:76
 msgid ""
 "It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
@@ -220,5 +220,13 @@ msgstr ""
 "hjälpa."
 
 #: build/slideshow-image-selector.tsx.js:1
-msgid "Select slideshow images"
-msgstr "Välj bildspelsbilder"
+msgid "Slideshow"
+msgstr "Bildspel"
+
+#: build/slideshow-image-selector.tsx.js:1
+msgid "Select images"
+msgstr "Välj bilder"
+
+#: build/slideshow-image-selector.tsx.js:1
+msgid "Clear images"
+msgstr "Töm bilder"
