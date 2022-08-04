@@ -84,7 +84,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 							</div>
 						<?php endif; ?>
 						<div class="text-center text-white text-shadow-md mt-[10vh] invisible"><?php bloginfo( 'description' ); ?></div>
-						<h1 class="font-sans max-w-full bg-red-700/50 p-4 text-white font-bold m-0 mb-2 mt-2 lg:text-6xl"><?php bloginfo( 'name' ); ?></h1>
+						<h1 class="font-sans max-w-full bg-red-700/50 p-4 text-white font-bold m-0 mb-2 mt-2 text-3xl lg:text-6xl"><?php bloginfo( 'name' ); ?></h1>
 						<div class="text-center text-white text-shadow-md mb-[10vh]"><?php bloginfo( 'description' ); ?></div>
 						<?php if ( count( $slideshow_images ) > 1 ) : ?>
 							<div class="m-1 opacity-50 hover:opacity-100 transition-opacity">
@@ -107,5 +107,5 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 				</div>
 			</div>
 		<?php endif; ?>
-		<section class="flex-grow pt-2 pb-2">
+		<section class="flex-grow">
 			<main id="main" role="main">

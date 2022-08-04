@@ -13,7 +13,7 @@ namespace Ftek\Theme;
 <?php if ( is_search() ) : ?>
 	<section class="flex flex-col items-center">
 		<header>
-			<h1>
+			<h1 class="text-center">
 				<?php
 				printf(
 					/* translators: %1$s: search term. */
@@ -49,8 +49,8 @@ namespace Ftek\Theme;
 					}
 					?>
 					<div class="relative overflow-hidden mb-4">
-						<div class="flex items-center justify-center <?php echo $thumbnail_id ? 'min-h-[min(50vw,40vh)]' : ''; ?>">
-							<h1 class="lg:text-6xl <?php echo $thumbnail_id ? 'text-white text-shadow-lg' : ''; ?>"><?php the_title(); ?></h1>
+						<div class="flex items-center justify-center pl-2 pr-2 <?php echo $thumbnail_id ? 'min-h-[min(50vw,40vh)]' : ''; ?>">
+							<h1 class="lg:text-6xl text-center <?php echo $thumbnail_id ? 'text-white text-shadow-lg' : ''; ?>"><?php the_title(); ?></h1>
 						</div>
 						<?php if ( $thumbnail_id ) : ?>
 							<div class="-z-10 top-0 absolute h-full w-full">
@@ -81,7 +81,7 @@ namespace Ftek\Theme;
 					<span><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ftek-theme' ); ?></span>
 				<?php else : ?>
 					<header>
-						<h1><?php esc_html_e( 'Nothing here', 'ftek-theme' ); ?></h1>
+						<h1 class="text-center"><?php esc_html_e( 'Nothing here', 'ftek-theme' ); ?></h1>
 					</header>
 					<div class="w-[60rem] grow-0 max-w-full mb-4">
 						<?php get_search_form(); ?>

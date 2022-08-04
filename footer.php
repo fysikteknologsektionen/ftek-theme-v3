@@ -15,35 +15,37 @@ $navbar_items = get_nav_menu_items_by_location( 'main-navbar' );
 		</section>
 		<footer class="pt-10">
 			<?php if ( is_singular() && ! is_front_page() ) : ?>
-				<div class="container mx-auto text-sm border-t pt-2 pb-4">
-					<?php
-					$published = get_the_time( 'c' );
-					$updated   = get_the_modified_time( 'c' );
-					?>
-					<?php if ( get_post_type() === 'post' ) : ?>
-						<div>
-							<?php
-							$published_str = date_i18n( get_option( 'date_format' ), strtotime( $published ) ) . ' ' . date_i18n( get_option( 'time_format' ), strtotime( $published ) );
-							printf(
-								/* translators: %1$s: datetime. */
-								get_post_type() === 'post' ? esc_html__( 'Published %1$s', 'ftek-theme' ) : esc_html__( 'Updated %1$s', 'ftek-theme' ),
-								'<time datetime="' . esc_attr( $published ) . '">' . esc_html( $published_str ) . '</time>'
-							);
-							?>
-						</div>
-					<?php endif; ?>
-					<?php if ( get_post_type() !== 'post' || $published !== $updated ) : ?>
-						<div>
-							<?php
-							$updated_str = date_i18n( get_option( 'date_format' ), strtotime( $updated ) ) . ' ' . date_i18n( get_option( 'time_format' ), strtotime( $updated ) );
-							printf(
-								/* translators: %1$s: datetime. */
-								get_post_type() === 'post' ? esc_html__( 'Updated %1$s', 'ftek-theme' ) : esc_html__( 'Updated %1$s', 'ftek-theme' ),
-								'<time datetime="' . esc_attr( $updated ) . '">' . esc_html( $updated_str ) . '</time>'
-							);
-							?>
-						</div>
-					<?php endif; ?>
+				<div class="container mx-auto text-sm pb-4 pl-2 pr-2">
+					<div class="border-t border-gray-200 pt-2">
+						<?php
+						$published = get_the_time( 'c' );
+						$updated   = get_the_modified_time( 'c' );
+						?>
+						<?php if ( get_post_type() === 'post' ) : ?>
+							<div>
+								<?php
+								$published_str = date_i18n( get_option( 'date_format' ), strtotime( $published ) ) . ' ' . date_i18n( get_option( 'time_format' ), strtotime( $published ) );
+								printf(
+									/* translators: %1$s: datetime. */
+									get_post_type() === 'post' ? esc_html__( 'Published %1$s', 'ftek-theme' ) : esc_html__( 'Updated %1$s', 'ftek-theme' ),
+									'<time datetime="' . esc_attr( $published ) . '">' . esc_html( $published_str ) . '</time>'
+								);
+								?>
+							</div>
+						<?php endif; ?>
+						<?php if ( get_post_type() !== 'post' || $published !== $updated ) : ?>
+							<div>
+								<?php
+								$updated_str = date_i18n( get_option( 'date_format' ), strtotime( $updated ) ) . ' ' . date_i18n( get_option( 'time_format' ), strtotime( $updated ) );
+								printf(
+									/* translators: %1$s: datetime. */
+									get_post_type() === 'post' ? esc_html__( 'Updated %1$s', 'ftek-theme' ) : esc_html__( 'Updated %1$s', 'ftek-theme' ),
+									'<time datetime="' . esc_attr( $updated ) . '">' . esc_html( $updated_str ) . '</time>'
+								);
+								?>
+							</div>
+						<?php endif; ?>
+					</div>
 				</div>
 			<?php endif; ?>
 			<div class="flex flex-wrap bg-dark-gray text-gray-500 p-4" role="contentinfo">
