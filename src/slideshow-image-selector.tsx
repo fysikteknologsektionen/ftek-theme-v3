@@ -1,6 +1,6 @@
-import { render, useState } from '@wordpress/element';
 import { MediaUpload } from '@wordpress/block-editor';
 import { Button, PanelRow } from '@wordpress/components';
+import { render, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 type Value = {

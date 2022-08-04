@@ -8,5 +8,8 @@
 		"editor.defaultFormatter": "wongjn.php-sniffer"
 	},
 	"typescript.tsdk": "./node_modules/typescript/lib",
-	"files.associations": { "*.scss": "postcss" }
+	"files.associations": { "*.scss": "postcss" },
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true
+	}
 }
