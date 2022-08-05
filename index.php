@@ -11,7 +11,7 @@ namespace Ftek\Theme;
 
 <?php get_header(); ?>
 <?php if ( is_search() ) : ?>
-	<section class="flex flex-col items-center">
+	<section class="container mx-auto">
 		<header>
 			<h1 class="text-center">
 				<?php
@@ -23,7 +23,7 @@ namespace Ftek\Theme;
 				?>
 			</h1>
 		</header>
-		<div class="w-[60rem] grow-0 max-w-full mb-4">
+		<div class="grow-0 mb-4 w-[60rem] max-w-full pl-2 pr-2 mx-auto">
 			<?php get_search_form(); ?>
 		</div>
 	</section>
@@ -50,7 +50,9 @@ namespace Ftek\Theme;
 					?>
 					<div class="relative overflow-hidden mb-4">
 						<div class="flex items-center justify-center pl-2 pr-2 <?php echo $thumbnail_id ? 'min-h-[min(50vw,40vh)]' : ''; ?>">
-							<h1 class="lg:text-6xl text-center <?php echo $thumbnail_id ? 'text-white text-shadow-lg' : ''; ?>"><?php the_title(); ?></h1>
+							<?php if ( ! empty( get_the_title() ) ) : ?>
+								<h1 class="lg:text-6xl text-center <?php echo $thumbnail_id ? 'text-white text-shadow-lg' : ''; ?>"><?php the_title(); ?></h1>
+							<?php endif; ?>
 						</div>
 						<?php if ( $thumbnail_id ) : ?>
 							<div class="-z-10 top-0 absolute h-full w-full">

@@ -31,7 +31,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 					<?php endif; ?>
 					<?php if ( $navbar_items ) : ?>
 						<nav class="hidden lg:block overflow-hidden">
-							<ul class="inline-flex justify-center list-none m-0">
+							<ul class="inline-flex justify-center list-none p-0">
 								<?php foreach ( $navbar_items as $item ) : ?>
 									<li class="p-2">
 										<a class="no-underline text-black" href="<?php echo esc_attr( $item->url ); ?>"><?php echo esc_attr( $item->title ); ?></a>
@@ -59,9 +59,9 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 			</div>
 			<?php if ( $navbar_items ) : ?>
 				<nav id="ftek-theme-dropdown" class="bg-white lg:hidden w-full absolute shadow-md [&[closed]]:-translate-y-[calc(100%+10px)] transition-transform" closed>
-					<ul class="container mx-auto list-none m-0">
+					<ul class="container mx-auto list-none p-0">
 						<?php foreach ( $navbar_items as $item ) : ?>
-							<li class="p-2">
+							<li class="p-2 text-right">
 								<a class="no-underline text-black" href="<?php echo esc_attr( $item->url ); ?>"><?php echo esc_attr( $item->title ); ?></a>
 							</li>
 						<?php endforeach; ?>
@@ -84,7 +84,7 @@ $navbar_items     = get_nav_menu_items_by_location( 'main-navbar' );
 							</div>
 						<?php endif; ?>
 						<div class="text-center text-white text-shadow-md mt-[10vh] invisible"><?php bloginfo( 'description' ); ?></div>
-						<h1 class="font-sans max-w-full bg-red-700/50 p-4 text-white font-bold m-0 mb-2 mt-2 text-3xl lg:text-6xl"><?php bloginfo( 'name' ); ?></h1>
+						<h1 class="font-sans max-w-full bg-red-700/50 p-4 text-white font-bold m-0 mb-2 mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl"><?php bloginfo( 'name' ); ?></h1>
 						<div class="text-center text-white text-shadow-md mb-[10vh]"><?php bloginfo( 'description' ); ?></div>
 						<?php if ( count( $slideshow_images ) > 1 ) : ?>
 							<div class="m-1 opacity-50 hover:opacity-100 transition-opacity">
